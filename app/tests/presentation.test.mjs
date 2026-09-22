@@ -1,0 +1,16 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {coverage,canRespond,isMobile,formatDate,decodePublicKey} from '../src/lib/presentation.mjs';
+const future={status:'Published',endsAt:'2099-01-01T12:00:00Z',myResponse:'Pending',mode:'Team',target:4,assigned:4,confirmed:3,pending:1};
+test('selecionados não são confirmações',()=>{assert.deepEqual(coverage(future),{assigned:4,confirmed:3,pending:1,missing:1});});
+test('ajudante extra não produz déficit negativo',()=>{assert.equal(coverage({...future,confirmed:5}).missing,0);});
+test('mutirão usa seu público, não uma quantidade fixa',()=>{assert.equal(coverage({...future,mode:'General',target:null,assigned:30,confirmed:26}).missing,4);});
+test('membro escalado pode responder a publicação atual',()=>assert.equal(canRespond(future),true));
+test('pessoa não escalada não recebe ações de resposta',()=>assert.equal(canRespond({...future,myResponse:null}),false));
+test('cancelamento remove ação de confirmação',()=>assert.equal(canRespond({...future,status:'Cancelled'}),false));
+test('encerramento remove ação de confirmação',()=>assert.equal(canRespond({...future,status:'Completed'}),false));
+test('atividade passada não aceita resposta na interface',()=>assert.equal(canRespond({...future,endsAt:'2000-01-01Z'}),false));
+test('desktop não é inscrito para push pelo cliente suportado',()=>assert.equal(isMobile('Mozilla/5.0 (Windows NT 10.0; Win64; x64)'),false));
+test('Android e iPhone são reconhecidos',()=>{assert.equal(isMobile('Mozilla Android 14'),true);assert.equal(isMobile('Mozilla iPhone OS 17'),true);});
+test('data inválida é apresentada sem exceção',()=>assert.equal(formatDate('invalida'),'Data indisponível'));
+test('apresentação converte UTC para o fuso da casa',()=>assert.match(formatDate('2026-09-21T12:00:00Z'),/09:00/));
+test('chave pública base64url é decodificada sem mudar bytes',()=>{const bytes=Uint8Array.from([0,1,254,255]);assert.deepEqual(decodePublicKey(Buffer.from(bytes).toString('base64url')),bytes);});

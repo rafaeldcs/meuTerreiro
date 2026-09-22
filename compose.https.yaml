@@ -1,0 +1,17 @@
+# Optional: use ONLY on a host where ports 80/443 are not already used by ShopAir.
+services:
+  public-edge:
+    image: caddy:2-alpine
+    environment:
+      APP_HOST: ${APP_HOST:?Set a domain with node scripts/init.mjs --host domain}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./infra/Caddyfile.public:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on: [gateway]
+    networks: [edge]
+    restart: unless-stopped
+volumes:
+  caddy-data: {}
+  caddy-config: {}

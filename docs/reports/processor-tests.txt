@@ -1,0 +1,23 @@
+test_attachment_rejected (test_processor.InspectionTests.test_attachment_rejected) ... ok
+test_blank_pdf_needs_review (test_processor.InspectionTests.test_blank_pdf_needs_review) ... ok
+test_empty_pdf_rejected (test_processor.InspectionTests.test_empty_pdf_rejected) ... ok
+test_encrypted_pdf_rejected (test_processor.InspectionTests.test_encrypted_pdf_rejected) ... ok
+test_extracted_data_does_not_quit_anything (test_processor.InspectionTests.test_extracted_data_does_not_quit_anything) ... ok
+test_fake_png_rejected (test_processor.InspectionTests.test_fake_png_rejected) ... ok
+test_javascript_rejected (test_processor.InspectionTests.test_javascript_rejected) ... ok
+test_jpeg_recognized_by_content (test_processor.InspectionTests.test_jpeg_recognized_by_content) ... ok
+test_max_five_pages (test_processor.InspectionTests.test_max_five_pages) ... ok
+test_open_action_rejected (test_processor.InspectionTests.test_open_action_rejected) ... ok
+test_png_needs_manual_reading (test_processor.InspectionTests.test_png_needs_manual_reading) ... ok
+test_six_pages_rejected (test_processor.InspectionTests.test_six_pages_rejected) ... ok
+test_text_is_not_pdf (test_processor.InspectionTests.test_text_is_not_pdf) ... ok
+test_truncated_pdf_rejected (test_processor.InspectionTests.test_truncated_pdf_rejected) ... ok
+test_failure_is_not_clean (test_processor.ScannerProtocolTests.test_failure_is_not_clean) ... ok
+test_found_blocks (test_processor.ScannerProtocolTests.test_found_blocks) ... ok
+test_framing_and_ok (test_processor.ScannerProtocolTests.test_framing_and_ok) ... ok
+test_unavailable_not_clean (test_processor.ScannerProtocolTests.test_unavailable_not_clean) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.057s
+
+OK

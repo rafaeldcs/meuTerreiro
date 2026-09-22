@@ -11,6 +11,10 @@ artifacts/
 *.user
 *.log
 .DS_Store
+<<<<<<< HEAD
+=======
+
+>>>>>>> e613fdf (feat: implementação inicial do Meu Terreiro)
 __pycache__/
 *.pyc
 *.tar.age
@@ -18,3 +22,8 @@ __pycache__/
 *.p12
 *.pfx
 *identity*.age
+<<<<<<< HEAD
+=======
+.env.*
+!*.example
+>>>>>>> e613fdf (feat: implementação inicial do Meu Terreiro)

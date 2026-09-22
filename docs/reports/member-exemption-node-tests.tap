@@ -1,0 +1,1180 @@
+TAP version 13
+# Subtest: Conversão exata de moeda: 0,01
+ok 1 - Conversão exata de moeda: 0,01
+  ---
+  duration_ms: 2.589922
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 100,00
+ok 2 - Conversão exata de moeda: 100,00
+  ---
+  duration_ms: 0.277458
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 1.234,56
+ok 3 - Conversão exata de moeda: 1.234,56
+  ---
+  duration_ms: 0.094202
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 1234.56
+ok 4 - Conversão exata de moeda: 1234.56
+  ---
+  duration_ms: 0.084678
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 0.29
+ok 5 - Conversão exata de moeda: 0.29
+  ---
+  duration_ms: 0.085709
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 001,09
+ok 6 - Conversão exata de moeda: 001,09
+  ---
+  duration_ms: 0.143226
+  type: 'test'
+  ...
+# Subtest: Conversão exata de moeda: 1
+ok 7 - Conversão exata de moeda: 1
+  ---
+  duration_ms: 0.088213
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "1e3"
+ok 8 - Rejeita moeda inválida: "1e3"
+  ---
+  duration_ms: 0.287423
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "1.234,567"
+ok 9 - Rejeita moeda inválida: "1.234,567"
+  ---
+  duration_ms: 0.279992
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "R$ 10"
+ok 10 - Rejeita moeda inválida: "R$ 10"
+  ---
+  duration_ms: 0.394434
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "NaN"
+ok 11 - Rejeita moeda inválida: "NaN"
+  ---
+  duration_ms: 0.158839
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "Infinity"
+ok 12 - Rejeita moeda inválida: "Infinity"
+  ---
+  duration_ms: 0.091618
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "--1"
+ok 13 - Rejeita moeda inválida: "--1"
+  ---
+  duration_ms: 0.068433
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "1,2,3"
+ok 14 - Rejeita moeda inválida: "1,2,3"
+  ---
+  duration_ms: 0.102525
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "-2"
+ok 15 - Rejeita moeda inválida: "-2"
+  ---
+  duration_ms: 0.06634
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: "0.001"
+ok 16 - Rejeita moeda inválida: "0.001"
+  ---
+  duration_ms: 0.074953
+  type: 'test'
+  ...
+# Subtest: Rejeita moeda inválida: ""
+ok 17 - Rejeita moeda inválida: ""
+  ---
+  duration_ms: 0.076505
+  type: 'test'
+  ...
+# Subtest: Ajuste negativo exige autorização de campo
+ok 18 - Ajuste negativo exige autorização de campo
+  ---
+  duration_ms: 0.153552
+  type: 'test'
+  ...
+# Subtest: Quantidade aceita três decimais sem arredondamento silencioso
+ok 19 - Quantidade aceita três decimais sem arredondamento silencioso
+  ---
+  duration_ms: 0.192871
+  type: 'test'
+  ...
+# Subtest: Valor opcional vazio é null, não quitação zero
+ok 20 - Valor opcional vazio é null, não quitação zero
+  ---
+  duration_ms: 0.104607
+  type: 'test'
+  ...
+# Subtest: Valor excessivo é recusado
+ok 21 - Valor excessivo é recusado
+  ---
+  duration_ms: 0.137006
+  type: 'test'
+  ...
+# Subtest: Horário da casa é convertido sem usar fuso do computador
+ok 22 - Horário da casa é convertido sem usar fuso do computador
+  ---
+  duration_ms: 18.815142
+  type: 'test'
+  ...
+# Subtest: Horário armazenado retorna ao fuso da casa
+ok 23 - Horário armazenado retorna ao fuso da casa
+  ---
+  duration_ms: 0.275034
+  type: 'test'
+  ...
+# Subtest: Meia-noite UTC não troca a data da casa antes da hora
+ok 24 - Meia-noite UTC não troca a data da casa antes da hora
+  ---
+  duration_ms: 0.340984
+  type: 'test'
+  ...
+# Subtest: Data inexistente não é normalizada silenciosamente
+ok 25 - Data inexistente não é normalizada silenciosamente
+  ---
+  duration_ms: 0.801528
+  type: 'test'
+  ...
+# Subtest: Membro não ganha finanças por interface
+ok 26 - Membro não ganha finanças por interface
+  ---
+  duration_ms: 0.163706
+  type: 'test'
+  ...
+# Subtest: Administrador técnico não ganha finanças pelo nome do perfil
+ok 27 - Administrador técnico não ganha finanças pelo nome do perfil
+  ---
+  duration_ms: 0.17261
+  type: 'test'
+  ...
+# Subtest: Permissão financeira explícita funciona
+ok 28 - Permissão financeira explícita funciona
+  ---
+  duration_ms: 0.112369
+  type: 'test'
+  ...
+# Subtest: Avisos não podem navegar para sites externos
+ok 29 - Avisos não podem navegar para sites externos
+  ---
+  duration_ms: 0.251719
+  type: 'test'
+  ...
+# Subtest: Aviso abre cada área interna permitida
+ok 30 - Aviso abre cada área interna permitida
+  ---
+  duration_ms: 0.336687
+  type: 'test'
+  ...
+# Subtest: Deep link de limpeza mantém identificador autorizado
+ok 31 - Deep link de limpeza mantém identificador autorizado
+  ---
+  duration_ms: 0.131468
+  type: 'test'
+  ...
+# Subtest: Saldo disponível desconta alocação e devolução
+ok 32 - Saldo disponível desconta alocação e devolução
+  ---
+  duration_ms: 0.141093
+  type: 'test'
+  ...
+# Subtest: Pagamento agrupado conserva o valor no cliente
+ok 33 - Pagamento agrupado conserva o valor no cliente
+  ---
+  duration_ms: 0.193902
+  type: 'test'
+  ...
+# Subtest: Quarta destinação não cabe em recebimento de três mensalidades
+ok 34 - Quarta destinação não cabe em recebimento de três mensalidades
+  ---
+  duration_ms: 0.147883
+  type: 'test'
+  ...
+# Subtest: Destinação negativa ou vazia não passa validação auxiliar
+ok 35 - Destinação negativa ou vazia não passa validação auxiliar
+  ---
+  duration_ms: 0.210848
+  type: 'test'
+  ...
+# Subtest: Campos invisíveis privados não são enviados por outro perfil
+ok 36 - Campos invisíveis privados não são enviados por outro perfil
+  ---
+  duration_ms: 0.975229
+  type: 'test'
+  ...
+# Subtest: Seleção de vários membros elimina duplicatas
+ok 37 - Seleção de vários membros elimina duplicatas
+  ---
+  duration_ms: 0.251178
+  type: 'test'
+  ...
+# Subtest: Linhas de tarefas têm espaços e vazias removidos
+ok 38 - Linhas de tarefas têm espaços e vazias removidos
+  ---
+  duration_ms: 0.175064
+  type: 'test'
+  ...
+# Subtest: Grupos vazios obrigatórios não são confirmados
+ok 39 - Grupos vazios obrigatórios não são confirmados
+  ---
+  duration_ms: 0.147422
+  type: 'test'
+  ...
+# Subtest: Valor monetário ausente é exibido como não disponível
+ok 40 - Valor monetário ausente é exibido como não disponível
+  ---
+  duration_ms: 0.195154
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/dues.generate / Gerar mensalidades
+ok 41 - Contrato de ação declarada: /finance/dues.generate / Gerar mensalidades
+  ---
+  duration_ms: 0.252791
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/due.exemption.request / Isentar somente este mês (exceção)
+ok 42 - Contrato de ação declarada: /finance/due.exemption.request / Isentar somente este mês (exceção)
+  ---
+  duration_ms: 0.098028
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Outros ajustes
+ok 43 - Contrato de ação declarada: /finance/approval.request / Outros ajustes
+  ---
+  duration_ms: 0.097357
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/rule.create / Nova regra
+ok 44 - Contrato de ação declarada: /finance/rule.create / Nova regra
+  ---
+  duration_ms: 0.113511
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/account.create / Nova conta
+ok 45 - Contrato de ação declarada: /finance/account.create / Nova conta
+  ---
+  duration_ms: 0.109304
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/transfer / Transferir entre contas
+ok 46 - Contrato de ação declarada: /finance/transfer / Transferir entre contas
+  ---
+  duration_ms: 0.138569
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Cadastrar saldo inicial
+ok 47 - Contrato de ação declarada: /finance/approval.request / Cadastrar saldo inicial
+  ---
+  duration_ms: 0.098929
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Solicitar ajuste de caixa
+ok 48 - Contrato de ação declarada: /finance/approval.request / Solicitar ajuste de caixa
+  ---
+  duration_ms: 0.091197
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/receipt.confirm / Confirmar recebimento
+ok 49 - Contrato de ação declarada: /finance/receipt.confirm / Confirmar recebimento
+  ---
+  duration_ms: 0.103786
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/receipt.allocate / Destinar valor
+ok 50 - Contrato de ação declarada: /finance/receipt.allocate / Destinar valor
+  ---
+  duration_ms: 0.117287
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Solicitar devolução
+ok 51 - Contrato de ação declarada: /finance/approval.request / Solicitar devolução
+  ---
+  duration_ms: 0.095634
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /reviews/open / Pedir esclarecimento
+ok 52 - Contrato de ação declarada: /reviews/open / Pedir esclarecimento
+  ---
+  duration_ms: 0.09974
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /reviews/reply / Responder
+ok 53 - Contrato de ação declarada: /reviews/reply / Responder
+  ---
+  duration_ms: 0.09924
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /reviews/resolve / Concluir revisão
+ok 54 - Contrato de ação declarada: /reviews/resolve / Concluir revisão
+  ---
+  duration_ms: 0.101192
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/expense.create / Solicitar despesa
+ok 55 - Contrato de ação declarada: /finance/expense.create / Solicitar despesa
+  ---
+  duration_ms: 0.091588
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/expense.pay / Registrar pagamento
+ok 56 - Contrato de ação declarada: /finance/expense.pay / Registrar pagamento
+  ---
+  duration_ms: 0.091207
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Prestar adiantamento
+ok 57 - Contrato de ação declarada: /finance/approval.request / Prestar adiantamento
+  ---
+  duration_ms: 0.091919
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/refund.execute / Confirmar execução
+ok 58 - Contrato de ação declarada: /finance/refund.execute / Confirmar execução
+  ---
+  duration_ms: 0.090706
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/cash.open / Abrir caixa
+ok 59 - Contrato de ação declarada: /finance/cash.open / Abrir caixa
+  ---
+  duration_ms: 0.103276
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/cash.close / Contar e encerrar
+ok 60 - Contrato de ação declarada: /finance/cash.close / Contar e encerrar
+  ---
+  duration_ms: 0.096205
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/cash.review / Revisar contagem
+ok 61 - Contrato de ação declarada: /finance/cash.review / Revisar contagem
+  ---
+  duration_ms: 0.092089
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /reconciliation/import / Importar extrato CSV
+ok 62 - Contrato de ação declarada: /reconciliation/import / Importar extrato CSV
+  ---
+  duration_ms: 0.11988
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /reconciliation/match / Conciliar movimento
+ok 63 - Contrato de ação declarada: /reconciliation/match / Conciliar movimento
+  ---
+  duration_ms: 0.087823
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/closing.prepare / Preparar fechamento
+ok 64 - Contrato de ação declarada: /finance/closing.prepare / Preparar fechamento
+  ---
+  duration_ms: 0.130167
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/closing.review / Revisar fechamento
+ok 65 - Contrato de ação declarada: /finance/closing.review / Revisar fechamento
+  ---
+  duration_ms: 0.084026
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Solicitar reabertura
+ok 66 - Contrato de ação declarada: /finance/approval.request / Solicitar reabertura
+  ---
+  duration_ms: 0.088894
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.item.create / Cadastrar item
+ok 67 - Contrato de ação declarada: /operations/stock.item.create / Cadastrar item
+  ---
+  duration_ms: 0.080952
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.receive / Registrar entrada
+ok 68 - Contrato de ação declarada: /operations/stock.receive / Registrar entrada
+  ---
+  duration_ms: 0.0798
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.reserve / Reservar material
+ok 69 - Contrato de ação declarada: /operations/stock.reserve / Reservar material
+  ---
+  duration_ms: 0.074382
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.adjust.request / Solicitar ajuste de contagem
+ok 70 - Contrato de ação declarada: /operations/stock.adjust.request / Solicitar ajuste de contagem
+  ---
+  duration_ms: 0.076625
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.issue / Registrar retirada
+ok 71 - Contrato de ação declarada: /operations/stock.issue / Registrar retirada
+  ---
+  duration_ms: 0.086431
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.settle / Prestar materiais
+ok 72 - Contrato de ação declarada: /operations/stock.settle / Prestar materiais
+  ---
+  duration_ms: 0.081172
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/stock.release / Liberar reserva restante
+ok 73 - Contrato de ação declarada: /operations/stock.release / Liberar reserva restante
+  ---
+  duration_ms: 0.07922
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/purchase.create / Novo pedido
+ok 74 - Contrato de ação declarada: /operations/purchase.create / Novo pedido
+  ---
+  duration_ms: 0.081042
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/purchase.submit / Enviar para aprovação
+ok 75 - Contrato de ação declarada: /operations/purchase.submit / Enviar para aprovação
+  ---
+  duration_ms: 0.113741
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/purchase.receive / Receber materiais
+ok 76 - Contrato de ação declarada: /operations/purchase.receive / Receber materiais
+  ---
+  duration_ms: 0.081513
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/supplier.create / Cadastrar fornecedor
+ok 77 - Contrato de ação declarada: /operations/supplier.create / Cadastrar fornecedor
+  ---
+  duration_ms: 0.089555
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/supplier.bank.request / Solicitar dados de pagamento
+ok 78 - Contrato de ação declarada: /operations/supplier.bank.request / Solicitar dados de pagamento
+  ---
+  duration_ms: 0.078278
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/donation.promise / Registrar intenção
+ok 79 - Contrato de ação declarada: /operations/donation.promise / Registrar intenção
+  ---
+  duration_ms: 0.077997
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/donation.receive / Confirmar entrega / recebimento
+ok 80 - Contrato de ação declarada: /operations/donation.receive / Confirmar entrega / recebimento
+  ---
+  duration_ms: 0.07327
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/fund.create / Nova campanha
+ok 81 - Contrato de ação declarada: /finance/fund.create / Nova campanha
+  ---
+  duration_ms: 0.069294
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /finance/approval.request / Revisar destinação
+ok 82 - Contrato de ação declarada: /finance/approval.request / Revisar destinação
+  ---
+  duration_ms: 0.077647
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/event.create / Planejar evento
+ok 83 - Contrato de ação declarada: /operations/event.create / Planejar evento
+  ---
+  duration_ms: 0.080301
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/event.update / Atualizar programação
+ok 84 - Contrato de ação declarada: /operations/event.update / Atualizar programação
+  ---
+  duration_ms: 0.122164
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/asset.create / Cadastrar bem
+ok 85 - Contrato de ação declarada: /operations/asset.create / Cadastrar bem
+  ---
+  duration_ms: 0.086991
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/asset.move / Movimentar bem
+ok 86 - Contrato de ação declarada: /operations/asset.move / Movimentar bem
+  ---
+  duration_ms: 0.088594
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/maintenance.create / Programar manutenção
+ok 87 - Contrato de ação declarada: /operations/maintenance.create / Programar manutenção
+  ---
+  duration_ms: 0.126321
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/maintenance.complete / Concluir serviço
+ok 88 - Contrato de ação declarada: /operations/maintenance.complete / Concluir serviço
+  ---
+  duration_ms: 0.114983
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/task.create / Criar tarefa
+ok 89 - Contrato de ação declarada: /operations/task.create / Criar tarefa
+  ---
+  duration_ms: 0.089465
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/task.complete / Marcar como concluída
+ok 90 - Contrato de ação declarada: /operations/task.complete / Marcar como concluída
+  ---
+  duration_ms: 0.075854
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/document.create / Catalogar documento
+ok 91 - Contrato de ação declarada: /operations/document.create / Catalogar documento
+  ---
+  duration_ms: 0.083005
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/budget.create / Criar previsão
+ok 92 - Contrato de ação declarada: /operations/budget.create / Criar previsão
+  ---
+  duration_ms: 0.116646
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/budget.approve / Aprovar orçamento
+ok 93 - Contrato de ação declarada: /operations/budget.approve / Aprovar orçamento
+  ---
+  duration_ms: 0.078278
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/announcement.publish / Publicar comunicado
+ok 94 - Contrato de ação declarada: /operations/announcement.publish / Publicar comunicado
+  ---
+  duration_ms: 0.091017
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /operations/announcement.ack / Estou ciente
+ok 95 - Contrato de ação declarada: /operations/announcement.ack / Estou ciente
+  ---
+  duration_ms: 0.07269
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/series.create / Criar série
+ok 96 - Contrato de ação declarada: /cleaning-actions/series.create / Criar série
+  ---
+  duration_ms: 0.084557
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/series.stop / Interromper novas ocorrências
+ok 97 - Contrato de ação declarada: /cleaning-actions/series.stop / Interromper novas ocorrências
+  ---
+  duration_ms: 0.077216
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/swap.accept / Responder ao pedido
+ok 98 - Contrato de ação declarada: /cleaning-actions/swap.accept / Responder ao pedido
+  ---
+  duration_ms: 0.07935
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/swap.review / Revisar substituição
+ok 99 - Contrato de ação declarada: /cleaning-actions/swap.review / Revisar substituição
+  ---
+  duration_ms: 0.127612
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /security/request / Solicitar mudança
+ok 100 - Contrato de ação declarada: /security/request / Solicitar mudança
+  ---
+  duration_ms: 0.07991
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /security/review / Revisar alteração
+ok 101 - Contrato de ação declarada: /security/review / Revisar alteração
+  ---
+  duration_ms: 0.084428
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /pix/intents / Criar cobrança de teste
+ok 102 - Contrato de ação declarada: /pix/intents / Criar cobrança de teste
+  ---
+  duration_ms: 0.073571
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/swap.request / Solicitar substituição
+ok 103 - Contrato de ação declarada: /cleaning-actions/swap.request / Solicitar substituição
+  ---
+  duration_ms: 0.079149
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/reschedule / Reagendar limpeza
+ok 104 - Contrato de ação declarada: /cleaning-actions/reschedule / Reagendar limpeza
+  ---
+  duration_ms: 0.075434
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/dispense / Dispensa de participante
+ok 105 - Contrato de ação declarada: /cleaning-actions/dispense / Dispensa de participante
+  ---
+  duration_ms: 0.070036
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/task.assign / Atribuir tarefa
+ok 106 - Contrato de ação declarada: /cleaning-actions/task.assign / Atribuir tarefa
+  ---
+  duration_ms: 0.054332
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/link.event / Vincular a evento
+ok 107 - Contrato de ação declarada: /cleaning-actions/link.event / Vincular a evento
+  ---
+  duration_ms: 0.072019
+  type: 'test'
+  ...
+# Subtest: Contrato de ação declarada: /cleaning-actions/close.pending / Encerrar com pendências
+ok 108 - Contrato de ação declarada: /cleaning-actions/close.pending / Encerrar com pendências
+  ---
+  duration_ms: 0.08629
+  type: 'test'
+  ...
+# Subtest: Toda área registrada usa uma coleção explicitamente autorizada
+ok 109 - Toda área registrada usa uma coleção explicitamente autorizada
+  ---
+  duration_ms: 0.594396
+  type: 'test'
+  ...
+# Subtest: Navegação não contém canais externos de comunicação
+ok 110 - Navegação não contém canais externos de comunicação
+  ---
+  duration_ms: 0.302055
+  type: 'test'
+  ...
+# Subtest: Quarentena continua separada da baixa de mensalidade
+ok 111 - Quarentena continua separada da baixa de mensalidade
+  ---
+  duration_ms: 0.541546
+  type: 'test'
+  ...
+# Subtest: Resposta de revisão de membro não devolve notas internas
+ok 112 - Resposta de revisão de membro não devolve notas internas
+  ---
+  duration_ms: 0.148794
+  type: 'test'
+  ...
+# Subtest: Conciliador Pix persiste a conservação de alocação
+ok 113 - Conciliador Pix persiste a conservação de alocação
+  ---
+  duration_ms: 0.187402
+  type: 'test'
+  ...
+# Subtest: O mês inicial segue São Paulo, inclusive perto da virada UTC
+ok 114 - O mês inicial segue São Paulo, inclusive perto da virada UTC
+  ---
+  duration_ms: 13.972865
+  type: 'test'
+  ...
+# Subtest: O mês inicial muda depois da virada local
+ok 115 - O mês inicial muda depois da virada local
+  ---
+  duration_ms: 0.310729
+  type: 'test'
+  ...
+# Subtest: Todo histórico não envia restrição de competência
+ok 116 - Todo histórico não envia restrição de competência
+  ---
+  duration_ms: 0.195575
+  type: 'test'
+  ...
+# Subtest: Filtro anual não exige mês
+ok 117 - Filtro anual não exige mês
+  ---
+  duration_ms: 0.201453
+  type: 'test'
+  ...
+# Subtest: Mês em todos os anos pode ser consultado
+ok 118 - Mês em todos os anos pode ser consultado
+  ---
+  duration_ms: 0.159801
+  type: 'test'
+  ...
+# Subtest: Paginação preserva filtros e pesquisa escapada
+ok 119 - Paginação preserva filtros e pesquisa escapada
+  ---
+  duration_ms: 0.271159
+  type: 'test'
+  ...
+# Subtest: Isenção total exibe Pago e observação Isento, sem alterar objeto financeiro
+ok 120 - Isenção total exibe Pago e observação Isento, sem alterar objeto financeiro
+  ---
+  duration_ms: 0.263997
+  type: 'test'
+  ...
+# Subtest: Pagamento efetivo exibe Pago sem observação de isenção
+ok 121 - Pagamento efetivo exibe Pago sem observação de isenção
+  ---
+  duration_ms: 0.093
+  type: 'test'
+  ...
+# Subtest: Pagamento parcial não aparece quitado
+ok 122 - Pagamento parcial não aparece quitado
+  ---
+  duration_ms: 0.233622
+  type: 'test'
+  ...
+# Subtest: Isenção inconsistente de versão antiga não esconde saldo em aberto
+ok 123 - Isenção inconsistente de versão antiga não esconde saldo em aberto
+  ---
+  duration_ms: 0.31142
+  type: 'test'
+  ...
+# Subtest: Isenção com pagamento não vira confirmação artificial
+ok 124 - Isenção com pagamento não vira confirmação artificial
+  ---
+  duration_ms: 0.128764
+  type: 'test'
+  ...
+# Subtest: Cancelamento não se confunde com Pago
+ok 125 - Cancelamento não se confunde com Pago
+  ---
+  duration_ms: 0.072169
+  type: 'test'
+  ...
+# Subtest: Solicitação de isenção simples só é oferecida com saldo e sem recebimentos
+ok 126 - Solicitação de isenção simples só é oferecida com saldo e sem recebimentos
+  ---
+  duration_ms: 0.091007
+  type: 'test'
+  ...
+# Subtest: O novo formulário pede apenas o motivo
+ok 127 - O novo formulário pede apenas o motivo
+  ---
+  duration_ms: 0.227683
+  type: 'test'
+  ...
+# Subtest: Motivo vazio é obrigatório no formulário
+ok 128 - Motivo vazio é obrigatório no formulário
+  ---
+  duration_ms: 0.228034
+  type: 'test'
+  ...
+# Subtest: Os doze meses ficam disponíveis, sem ano fixo
+ok 129 - Os doze meses ficam disponíveis, sem ano fixo
+  ---
+  duration_ms: 0.150687
+  type: 'test'
+  ...
+# Subtest: Filtros distinguem isentos de pagamentos, mas permitem consolidar regularizados
+ok 130 - Filtros distinguem isentos de pagamentos, mas permitem consolidar regularizados
+  ---
+  duration_ms: 0.126961
+  type: 'test'
+  ...
+# Subtest: Rótulos de período não usam data do pagamento
+ok 131 - Rótulos de período não usam data do pagamento
+  ---
+  duration_ms: 0.088854
+  type: 'test'
+  ...
+# Subtest: Contrato estático: a isenção calcula redução no servidor e não cria receita
+ok 132 - Contrato estático: a isenção calcula redução no servidor e não cria receita
+  ---
+  duration_ms: 0.317067
+  type: 'test'
+  ...
+# Subtest: Contrato estático: atualização aprovada armazena motivo e notifica só no sistema
+ok 133 - Contrato estático: atualização aprovada armazena motivo e notifica só no sistema
+  ---
+  duration_ms: 0.251659
+  type: 'test'
+  ...
+# Subtest: Contrato estático: total e paginação usam o filtro completo no servidor
+ok 134 - Contrato estático: total e paginação usam o filtro completo no servidor
+  ---
+  duration_ms: 0.154072
+  type: 'test'
+  ...
+# Subtest: Contrato estático: detalhes autorizados omitem pagadores e totais de terceiros
+ok 135 - Contrato estático: detalhes autorizados omitem pagadores e totais de terceiros
+  ---
+  duration_ms: 0.136055
+  type: 'test'
+  ...
+# Subtest: Contrato estático: tela inicial e detalhes estão conectados à API específica
+ok 136 - Contrato estático: tela inicial e detalhes estão conectados à API específica
+  ---
+  duration_ms: 0.19251
+  type: 'test'
+  ...
+# Subtest: Isenção do cadastro usa o mês de São Paulo, não a data UTC
+ok 137 - Isenção do cadastro usa o mês de São Paulo, não a data UTC
+  ---
+  duration_ms: 20.223855
+  type: 'test'
+  ...
+# Subtest: Próxima competência funciona na virada do ano
+ok 138 - Próxima competência funciona na virada do ano
+  ---
+  duration_ms: 0.268564
+  type: 'test'
+  ...
+# Subtest: Próxima competência rejeita meses malformados
+ok 139 - Próxima competência rejeita meses malformados
+  ---
+  duration_ms: 0.397799
+  type: 'test'
+  ...
+# Subtest: Cadastro aprovado fica isento em meses consecutivos sem nova solicitação
+ok 140 - Cadastro aprovado fica isento em meses consecutivos sem nova solicitação
+  ---
+  duration_ms: 0.207263
+  type: 'test'
+  ...
+# Subtest: Cadastro futuro não é exibido como vigente
+ok 141 - Cadastro futuro não é exibido como vigente
+  ---
+  duration_ms: 0.128303
+  type: 'test'
+  ...
+# Subtest: Solicitação pendente não torna o médium isento
+ok 142 - Solicitação pendente não torna o médium isento
+  ---
+  duration_ms: 0.115644
+  type: 'test'
+  ...
+# Subtest: Solicitação rejeitada não concede benefício
+ok 143 - Solicitação rejeitada não concede benefício
+  ---
+  duration_ms: 0.182505
+  type: 'test'
+  ...
+# Subtest: Solicitação retirada não concede benefício
+ok 144 - Solicitação retirada não concede benefício
+  ---
+  duration_ms: 0.106671
+  type: 'test'
+  ...
+# Subtest: Último mês configurado é inclusivo
+ok 145 - Último mês configurado é inclusivo
+  ---
+  duration_ms: 0.339572
+  type: 'test'
+  ...
+# Subtest: Encerramento tem limite exclusivo e não retira isenção anterior
+ok 146 - Encerramento tem limite exclusivo e não retira isenção anterior
+  ---
+  duration_ms: 0.414765
+  type: 'test'
+  ...
+# Subtest: Benefício cancelado antes da vigência não aparece programado
+ok 147 - Benefício cancelado antes da vigência não aparece programado
+  ---
+  duration_ms: 0.227763
+  type: 'test'
+  ...
+# Subtest: Revisor não precisa encerrar regra que já terminou naturalmente
+ok 148 - Revisor não precisa encerrar regra que já terminou naturalmente
+  ---
+  duration_ms: 0.157377
+  type: 'test'
+  ...
+# Subtest: Encerramento não é oferecido duas vezes nem durante revisão pendente
+ok 149 - Encerramento não é oferecido duas vezes nem durante revisão pendente
+  ---
+  duration_ms: 0.117657
+  type: 'test'
+  ...
+# Subtest: Ação de isenção identifica o médium, não uma mensalidade
+ok 150 - Ação de isenção identifica o médium, não uma mensalidade
+  ---
+  duration_ms: 0.899185
+  type: 'test'
+  ...
+# Subtest: Motivo é obrigatório e o formulário não envia recebimento ou saldo pago
+ok 151 - Motivo é obrigatório e o formulário não envia recebimento ou saldo pago
+  ---
+  duration_ms: 0.306943
+  type: 'test'
+  ...
+# Subtest: Encerramento sugere próximo mês, preservando o corrente
+ok 152 - Encerramento sugere próximo mês, preservando o corrente
+  ---
+  duration_ms: 0.200903
+  type: 'test'
+  ...
+# Subtest: Benefício programado encerra a partir de seu início, não antes
+ok 153 - Benefício programado encerra a partir de seu início, não antes
+  ---
+  duration_ms: 0.109505
+  type: 'test'
+  ...
+# Subtest: Tesouraria tem acesso ao cadastro de membros sem virar coordenador
+ok 154 - Tesouraria tem acesso ao cadastro de membros sem virar coordenador
+  ---
+  duration_ms: 0.304609
+  type: 'test'
+  ...
+# Subtest: Membro comum não navega no cadastro de todos os membros
+ok 155 - Membro comum não navega no cadastro de todos os membros
+  ---
+  duration_ms: 0.144528
+  type: 'test'
+  ...
+# Subtest: Aviso interno abre cadastro, sem URL externa
+ok 156 - Aviso interno abre cadastro, sem URL externa
+  ---
+  duration_ms: 0.151628
+  type: 'test'
+  ...
+# Subtest: Exceções comunicam preservação de pagamentos e períodos fechados
+ok 157 - Exceções comunicam preservação de pagamentos e períodos fechados
+  ---
+  duration_ms: 0.207833
+  type: 'test'
+  ...
+# Subtest: Contrato estático: geração consulta cadastro antes de persistir mensalidade
+ok 158 - Contrato estático: geração consulta cadastro antes de persistir mensalidade
+  ---
+  duration_ms: 0.190938
+  type: 'test'
+  ...
+# Subtest: Contrato estático: benefício não incrementa PaidCents nem cria receita
+ok 159 - Contrato estático: benefício não incrementa PaidCents nem cria receita
+  ---
+  duration_ms: 0.190086
+  type: 'test'
+  ...
+# Subtest: Contrato estático: aprovação independente protege o beneficiário
+ok 160 - Contrato estático: aprovação independente protege o beneficiário
+  ---
+  duration_ms: 0.189856
+  type: 'test'
+  ...
+# Subtest: Contrato estático: acesso aos motivos é por casa e próprio membro ou financeiro
+ok 161 - Contrato estático: acesso aos motivos é por casa e próprio membro ou financeiro
+  ---
+  duration_ms: 0.178869
+  type: 'test'
+  ...
+# Subtest: Contrato estático: preservação de competências e períodos fechados
+ok 162 - Contrato estático: preservação de competências e períodos fechados
+  ---
+  duration_ms: 0.187803
+  type: 'test'
+  ...
+# Subtest: Contrato estático: perfil de limpeza não recebe benefício por inferência
+ok 163 - Contrato estático: perfil de limpeza não recebe benefício por inferência
+  ---
+  duration_ms: 0.17905
+  type: 'test'
+  ...
+# Subtest: Contrato estático: motivo da regra é fotografado na mensalidade
+ok 164 - Contrato estático: motivo da regra é fotografado na mensalidade
+  ---
+  duration_ms: 0.152029
+  type: 'test'
+  ...
+# Subtest: Contrato estático: isenção individual não migra automaticamente todos os membros
+ok 165 - Contrato estático: isenção individual não migra automaticamente todos os membros
+  ---
+  duration_ms: 0.208534
+  type: 'test'
+  ...
+# Subtest: Cadastro já isento sem término não oferece botão para duplicar benefício
+ok 166 - Cadastro já isento sem término não oferece botão para duplicar benefício
+  ---
+  duration_ms: 0.354404
+  type: 'test'
+  ...
+# Subtest: Próxima concessão sugere primeiro mês após vigência existente
+ok 167 - Próxima concessão sugere primeiro mês após vigência existente
+  ---
+  duration_ms: 0.133491
+  type: 'test'
+  ...
+# Subtest: Cadastro sem isenção permite iniciar no mês corrente
+ok 168 - Cadastro sem isenção permite iniciar no mês corrente
+  ---
+  duration_ms: 0.109635
+  type: 'test'
+  ...
+# Subtest: Isenção futura cancelada não impede nova solicitação
+ok 169 - Isenção futura cancelada não impede nova solicitação
+  ---
+  duration_ms: 0.093261
+  type: 'test'
+  ...
+# Subtest: selecionados não são confirmações
+ok 170 - selecionados não são confirmações
+  ---
+  duration_ms: 3.610039
+  type: 'test'
+  ...
+# Subtest: ajudante extra não produz déficit negativo
+ok 171 - ajudante extra não produz déficit negativo
+  ---
+  duration_ms: 0.283837
+  type: 'test'
+  ...
+# Subtest: mutirão usa seu público, não uma quantidade fixa
+ok 172 - mutirão usa seu público, não uma quantidade fixa
+  ---
+  duration_ms: 0.197317
+  type: 'test'
+  ...
+# Subtest: membro escalado pode responder a publicação atual
+ok 173 - membro escalado pode responder a publicação atual
+  ---
+  duration_ms: 0.622228
+  type: 'test'
+  ...
+# Subtest: pessoa não escalada não recebe ações de resposta
+ok 174 - pessoa não escalada não recebe ações de resposta
+  ---
+  duration_ms: 0.185489
+  type: 'test'
+  ...
+# Subtest: cancelamento remove ação de confirmação
+ok 175 - cancelamento remove ação de confirmação
+  ---
+  duration_ms: 0.196516
+  type: 'test'
+  ...
+# Subtest: encerramento remove ação de confirmação
+ok 176 - encerramento remove ação de confirmação
+  ---
+  duration_ms: 0.15297
+  type: 'test'
+  ...
+# Subtest: atividade passada não aceita resposta na interface
+ok 177 - atividade passada não aceita resposta na interface
+  ---
+  duration_ms: 0.151148
+  type: 'test'
+  ...
+# Subtest: desktop não é inscrito para push pelo cliente suportado
+ok 178 - desktop não é inscrito para push pelo cliente suportado
+  ---
+  duration_ms: 0.564941
+  type: 'test'
+  ...
+# Subtest: Android e iPhone são reconhecidos
+ok 179 - Android e iPhone são reconhecidos
+  ---
+  duration_ms: 0.548076
+  type: 'test'
+  ...
+# Subtest: data inválida é apresentada sem exceção
+ok 180 - data inválida é apresentada sem exceção
+  ---
+  duration_ms: 0.288285
+  type: 'test'
+  ...
+# Subtest: apresentação converte UTC para o fuso da casa
+ok 181 - apresentação converte UTC para o fuso da casa
+  ---
+  duration_ms: 20.939713
+  type: 'test'
+  ...
+# Subtest: chave pública base64url é decodificada sem mudar bytes
+ok 182 - chave pública base64url é decodificada sem mudar bytes
+  ---
+  duration_ms: 0.397169
+  type: 'test'
+  ...
+# Subtest: manifest aponta para ícones existentes e modo instalável
+ok 183 - manifest aponta para ícones existentes e modo instalável
+  ---
+  duration_ms: 0.954929
+  type: 'test'
+  ...
+# Subtest: arquivos sensíveis não devem ser versionados
+ok 184 - arquivos sensíveis não devem ser versionados
+  ---
+  duration_ms: 0.317358
+  type: 'test'
+  ...
+# Subtest: API e scripts não trazem banco ou credenciais da ShopAir
+ok 185 - API e scripts não trazem banco ou credenciais da ShopAir
+  ---
+  duration_ms: 0.932646
+  type: 'test'
+  ...
+# Subtest: inicialização cria segredos exclusivos e não sobrescreve ambiente
+ok 186 - inicialização cria segredos exclusivos e não sobrescreve ambiente
+  ---
+  duration_ms: 72.386775
+  type: 'test'
+  ...
+# Subtest: rotas arbitrárias são reduzidas à central interna
+ok 187 - rotas arbitrárias são reduzidas à central interna
+  ---
+  duration_ms: 2.759337
+  type: 'test'
+  ...
+# Subtest: rota gerada de limpeza é preservada
+ok 188 - rota gerada de limpeza é preservada
+  ---
+  duration_ms: 0.651181
+  type: 'test'
+  ...
+# Subtest: texto sensível no payload nunca é exibido na tela bloqueada
+ok 189 - texto sensível no payload nunca é exibido na tela bloqueada
+  ---
+  duration_ms: 0.668378
+  type: 'test'
+  ...
+# Subtest: payload malformado usa texto neutro
+ok 190 - payload malformado usa texto neutro
+  ---
+  duration_ms: 0.747236
+  type: 'test'
+  ...
+# Subtest: tocar no push abre apenas origem interna e não envia resposta de negócio
+ok 191 - tocar no push abre apenas origem interna e não envia resposta de negócio
+  ---
+  duration_ms: 0.69
+  type: 'test'
+  ...
+# Subtest: cache de instalação contém só recursos públicos
+ok 192 - cache de instalação contém só recursos públicos
+  ---
+  duration_ms: 1.137494
+  type: 'test'
+  ...
+# Subtest: service worker não intercepta nem armazena a API
+ok 193 - service worker não intercepta nem armazena a API
+  ---
+  duration_ms: 0.687796
+  type: 'test'
+  ...
+# Subtest: operações POST não são guardadas offline
+ok 194 - operações POST não são guardadas offline
+  ---
+  duration_ms: 0.497529
+  type: 'test'
+  ...
+# Subtest: falha de navegação recebe só página offline neutra
+ok 195 - falha de navegação recebe só página offline neutra
+  ---
+  duration_ms: 0.928559
+  type: 'test'
+  ...
+1..195
+# tests 195
+# suites 0
+# pass 195
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 302.041981

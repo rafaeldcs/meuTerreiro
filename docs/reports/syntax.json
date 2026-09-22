@@ -1,0 +1,5 @@
+{
+  "scope": "Syntax parsing only, not Next build, React runtime, type-check or C# compilation",
+  "files": 47,
+  "errors": []
+}

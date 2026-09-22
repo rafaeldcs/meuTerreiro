@@ -1,0 +1,213 @@
+name: terreiro-hml
+services:
+  key-init:
+    image: mongo:8.0
+    user: 0:0
+    entrypoint:
+    - /bin/bash
+    - -c
+    command:
+    - cp /key-source /key/keyfile && chown 999:999 /key/keyfile && chmod 400 /key/keyfile
+    volumes:
+    - ./.secrets/mongo-key:/key-source:ro
+    - mongo-key:/key
+    network_mode: none
+    restart: 'no'
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  mongo:
+    image: mongo:8.0
+    command:
+    - mongod
+    - --replSet
+    - rs0
+    - --bind_ip_all
+    - --keyFile
+    - /key/keyfile
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?Run node scripts/init.mjs}
+    volumes:
+    - mongo-data:/data/db
+    - mongo-key:/key:ro
+    networks:
+    - private
+    depends_on:
+      key-init:
+        condition: service_completed_successfully
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - 'mongosh --quiet --host localhost --username root --password "$$MONGO_INITDB_ROOT_PASSWORD"
+        --authenticationDatabase admin --eval "quit(db.adminCommand({ping:1}).ok ?
+        0 : 1)"'
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  mongo-init:
+    image: mongo:8.0
+    environment:
+      MONGO_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+      MONGO_APP_PASSWORD: ${MONGO_APP_PASSWORD}
+      MONGO_DATABASE: terreiro_hml
+    entrypoint:
+    - /bin/bash
+    - -c
+    command:
+    - mongosh --quiet --host mongo --username root --password "$$MONGO_ROOT_PASSWORD"
+      --authenticationDatabase admin --file /scripts/init-mongo.js
+    volumes:
+    - ./infra/init-mongo.js:/scripts/init-mongo.js:ro
+    networks:
+    - private
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: 'no'
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  api:
+    build: ./api
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${APP_ENVIRONMENT:-Development}
+      ASPNETCORE_HTTP_PORTS: 8080
+      App__Origin: ${APP_ORIGIN:-http://localhost:8080}
+      App__HouseId: tenda-dagua-hml
+      Mongo__ConnectionString: mongodb://terreiro_app:${MONGO_APP_PASSWORD}@mongo:27017/terreiro_hml?replicaSet=rs0&authSource=terreiro_hml
+      Mongo__Database: terreiro_hml
+      Bootstrap__MigrateLegacyPermissions: ${MIGRATE_LEGACY_PERMISSIONS:-false}
+      Bootstrap__Login: ${BOOTSTRAP_LOGIN:-admin}
+      Bootstrap__Password: ${BOOTSTRAP_PASSWORD}
+      WebPush__Enabled: ${WEB_PUSH_ENABLED:-false}
+      WebPush__Subject: ${VAPID_SUBJECT:-https://localhost}
+      WebPush__PublicKey: ${VAPID_PUBLIC_KEY}
+      WebPush__PrivateKey: ${VAPID_PRIVATE_KEY}
+      Files__Directory: /app/data/evidence
+      Processor__Url: http://processor:8090
+      Processor__Key: ${PROCESSOR_KEY:?Run node scripts/init.mjs or upgrade-config.mjs}
+      Pix__Enabled: 'false'
+    depends_on:
+      mongo-init:
+        condition: service_completed_successfully
+    networks:
+    - private
+    - edge
+    - documents
+    restart: unless-stopped
+    volumes:
+    - evidence-data:/app/data/evidence
+    mem_limit: 1g
+    security_opt:
+    - no-new-privileges:true
+    cap_drop:
+    - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  app:
+    build: ./app
+    environment:
+      INTERNAL_API_ORIGIN: http://api:8080
+    networks:
+    - edge
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  gateway:
+    image: caddy:2-alpine
+    ports:
+    - ${BIND_ADDRESS:-127.0.0.1}:${HTTP_PORT:-8080}:80
+    volumes:
+    - ./infra/Caddyfile:/etc/caddy/Caddyfile:ro
+    networks:
+    - edge
+    depends_on:
+    - api
+    - app
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  processor:
+    build: ./processor
+    environment:
+      PROCESSOR_KEY: ${PROCESSOR_KEY}
+      CLAMAV_HOST: antivirus
+    networks:
+    - documents
+    - scan
+    read_only: true
+    tmpfs:
+    - /tmp:rw,noexec,nosuid,size=128m,mode=1777
+    cap_drop:
+    - ALL
+    security_opt:
+    - no-new-privileges:true
+    pids_limit: 64
+    mem_limit: 1g
+    cpus: 1
+    restart: unless-stopped
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen("http://127.0.0.1:8090/health",timeout=3)
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+  antivirus:
+    image: clamav/clamav:stable
+    volumes:
+    - clamav-data:/var/lib/clamav
+    networks:
+    - scan
+    - scanner-egress
+    mem_limit: 4g
+    cpus: 1
+    restart: unless-stopped
+    security_opt:
+    - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '3'
+networks:
+  private:
+    internal: true
+  edge: {}
+  documents:
+    internal: true
+  scan:
+    internal: true
+  scanner-egress: {}
+volumes:
+  mongo-data: {}
+  mongo-key: {}
+  evidence-data: {}
+  clamav-data: {}

@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0-alpha.2",
+  "date": "2026-09-21",
+  "javascript": {
+    "passed": 138,
+    "failed": 0,
+    "scope": "helpers, service worker, source contracts and structure"
+  },
+  "processor": {
+    "passed": 18,
+    "failed": 0,
+    "liveAntivirus": false
+  },
+  "responsive": {
+    "passed": 35,
+    "failed": 0,
+    "scope": "isolated component layout, synthetic data, Chromium"
+  },
+  "nextBuildCompleted": false,
+  "dotnetBuildCompleted": false,
+  "xunitExecuted": false,
+  "databaseIntegrationExecuted": false,
+  "backupRestoreExecuted": false,
+  "publicDeployment": false,
+  "physicalPhonePushTested": false,
+  "completeSpecificationImplemented": false,
+  "readyForProduction": false
+}

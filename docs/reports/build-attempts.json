@@ -1,0 +1,23 @@
+[
+  {
+    "command": "dotnet test api/Tests/Tests.csproj --configuration Release",
+    "executed": false,
+    "reason": "Executável não instalado: dotnet"
+  },
+  {
+    "command": "dotnet build api/WebAPI/WebAPI.csproj --configuration Release",
+    "executed": false,
+    "reason": "Executável não instalado: dotnet"
+  },
+  {
+    "command": "npm run build --prefix app",
+    "executed": true,
+    "exitCode": 127,
+    "output": "\n> terreiro-app@0.2.0-alpha.2 build\n> next build\n\nsh: 1: next: not found\n"
+  },
+  {
+    "command": "docker compose config --quiet",
+    "executed": false,
+    "reason": "Executável não instalado: docker"
+  }
+]

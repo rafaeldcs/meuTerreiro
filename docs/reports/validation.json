@@ -1,0 +1,21 @@
+{
+  "version": "0.2.1-alpha.1",
+  "date": "2026-09-22",
+  "js": {
+    "passed": 162,
+    "failed": 0,
+    "scope": "JS rules plus static source contracts; not C# execution"
+  },
+  "layout": {
+    "passed": 50,
+    "failed": 0,
+    "scope": "isolated JSX/Chromium fixtures"
+  },
+  "syntax": {
+    "files": 44,
+    "errors": 0
+  },
+  "dotnetExecuted": false,
+  "httpIntegrationExecuted": false,
+  "published": false
+}

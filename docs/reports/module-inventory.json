@@ -1,0 +1,649 @@
+{
+  "modules": [
+    {
+      "route": "/mensalidades",
+      "title": "Mensalidades",
+      "resource": "dues",
+      "actions": [
+        {
+          "label": "Gerar mensalidades",
+          "endpoint": "/finance/dues.generate",
+          "special": null
+        },
+        {
+          "label": "Solicitar ajuste",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/regras",
+      "title": "Regras de contribuição",
+      "resource": "rules",
+      "actions": [
+        {
+          "label": "Nova regra",
+          "endpoint": "/finance/rule.create",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/financeiro",
+      "title": "Contas e movimentos",
+      "resource": "accounts",
+      "actions": [
+        {
+          "label": "Nova conta",
+          "endpoint": "/finance/account.create",
+          "special": null
+        },
+        {
+          "label": "Transferir entre contas",
+          "endpoint": "/finance/transfer",
+          "special": null
+        },
+        {
+          "label": "Cadastrar saldo inicial",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        },
+        {
+          "label": "Solicitar ajuste de caixa",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/movimentos",
+      "title": "Movimentações financeiras",
+      "resource": "ledger",
+      "actions": []
+    },
+    {
+      "route": "/recebimentos",
+      "title": "Recebimentos",
+      "resource": "receipts",
+      "actions": [
+        {
+          "label": "Confirmar recebimento",
+          "endpoint": "/finance/receipt.confirm",
+          "special": null
+        },
+        {
+          "label": "Destinar valor",
+          "endpoint": "/finance/receipt.allocate",
+          "special": null
+        },
+        {
+          "label": "Solicitar devolução",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/recibos",
+      "title": "Meus recibos",
+      "resource": "allocations",
+      "actions": [
+        {
+          "label": "Abrir recibo",
+          "endpoint": null,
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/comprovantes",
+      "title": "Comprovantes",
+      "resource": "evidence",
+      "actions": [
+        {
+          "label": "Enviar arquivo",
+          "endpoint": null,
+          "special": "upload"
+        },
+        {
+          "label": "Ver análise",
+          "endpoint": null,
+          "special": "analysis"
+        },
+        {
+          "label": "Baixar original",
+          "endpoint": null,
+          "special": null
+        },
+        {
+          "label": "Pedir esclarecimento",
+          "endpoint": "/reviews/open",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/revisoes",
+      "title": "Esclarecimentos",
+      "resource": "reviews",
+      "actions": [
+        {
+          "label": "Ler histórico",
+          "endpoint": null,
+          "special": "messages"
+        },
+        {
+          "label": "Responder",
+          "endpoint": "/reviews/reply",
+          "special": null
+        },
+        {
+          "label": "Concluir revisão",
+          "endpoint": "/reviews/resolve",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/despesas",
+      "title": "Despesas e reembolsos",
+      "resource": "expenses",
+      "actions": [
+        {
+          "label": "Solicitar despesa",
+          "endpoint": "/finance/expense.create",
+          "special": null
+        },
+        {
+          "label": "Registrar pagamento",
+          "endpoint": "/finance/expense.pay",
+          "special": null
+        },
+        {
+          "label": "Prestar adiantamento",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/aprovacoes",
+      "title": "Aprovações",
+      "resource": "approvals",
+      "actions": [
+        {
+          "label": "Ver dados da solicitação",
+          "endpoint": null,
+          "special": "approvalDetail"
+        },
+        {
+          "label": "Analisar solicitação",
+          "endpoint": "computed",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/devolucoes",
+      "title": "Devoluções",
+      "resource": "refunds",
+      "actions": [
+        {
+          "label": "Confirmar execução",
+          "endpoint": "/finance/refund.execute",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/caixa",
+      "title": "Caixa físico",
+      "resource": "cash",
+      "actions": [
+        {
+          "label": "Abrir caixa",
+          "endpoint": "/finance/cash.open",
+          "special": null
+        },
+        {
+          "label": "Contar e encerrar",
+          "endpoint": "/finance/cash.close",
+          "special": null
+        },
+        {
+          "label": "Revisar contagem",
+          "endpoint": "/finance/cash.review",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/conciliacao",
+      "title": "Conciliação",
+      "resource": "statements",
+      "actions": [
+        {
+          "label": "Importar extrato CSV",
+          "endpoint": "/reconciliation/import",
+          "special": null
+        },
+        {
+          "label": "Conciliar movimento",
+          "endpoint": "/reconciliation/match",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/extratos",
+      "title": "Importações de extrato",
+      "resource": "statement-batches",
+      "actions": []
+    },
+    {
+      "route": "/fechamentos",
+      "title": "Fechamento mensal",
+      "resource": "closings",
+      "actions": [
+        {
+          "label": "Preparar fechamento",
+          "endpoint": "/finance/closing.prepare",
+          "special": null
+        },
+        {
+          "label": "Revisar fechamento",
+          "endpoint": "/finance/closing.review",
+          "special": null
+        },
+        {
+          "label": "Solicitar reabertura",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/estoque",
+      "title": "Estoque",
+      "resource": "items",
+      "actions": [
+        {
+          "label": "Cadastrar item",
+          "endpoint": "/operations/stock.item.create",
+          "special": null
+        },
+        {
+          "label": "Registrar entrada",
+          "endpoint": "/operations/stock.receive",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/lotes",
+      "title": "Saldos e lotes",
+      "resource": "lots",
+      "actions": [
+        {
+          "label": "Reservar material",
+          "endpoint": "/operations/stock.reserve",
+          "special": null
+        },
+        {
+          "label": "Solicitar ajuste de contagem",
+          "endpoint": "/operations/stock.adjust.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/reservas",
+      "title": "Materiais por atividade",
+      "resource": "reservations",
+      "actions": [
+        {
+          "label": "Registrar retirada",
+          "endpoint": "/operations/stock.issue",
+          "special": null
+        },
+        {
+          "label": "Prestar materiais",
+          "endpoint": "/operations/stock.settle",
+          "special": null
+        },
+        {
+          "label": "Liberar reserva restante",
+          "endpoint": "/operations/stock.release",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/movimentos-estoque",
+      "title": "Histórico de estoque",
+      "resource": "stock-movements",
+      "actions": []
+    },
+    {
+      "route": "/compras",
+      "title": "Compras",
+      "resource": "purchases",
+      "actions": [
+        {
+          "label": "Novo pedido",
+          "endpoint": "/operations/purchase.create",
+          "special": null
+        },
+        {
+          "label": "Ver itens",
+          "endpoint": null,
+          "special": "purchaseLines"
+        },
+        {
+          "label": "Enviar para aprovação",
+          "endpoint": "/operations/purchase.submit",
+          "special": null
+        },
+        {
+          "label": "Receber materiais",
+          "endpoint": "/operations/purchase.receive",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/fornecedores",
+      "title": "Fornecedores",
+      "resource": "suppliers",
+      "actions": [
+        {
+          "label": "Cadastrar fornecedor",
+          "endpoint": "/operations/supplier.create",
+          "special": null
+        },
+        {
+          "label": "Solicitar dados de pagamento",
+          "endpoint": "/operations/supplier.bank.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/doacoes",
+      "title": "Doações",
+      "resource": "donations",
+      "actions": [
+        {
+          "label": "Registrar intenção",
+          "endpoint": "/operations/donation.promise",
+          "special": null
+        },
+        {
+          "label": "Confirmar entrega / recebimento",
+          "endpoint": "/operations/donation.receive",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/campanhas",
+      "title": "Campanhas e fundos",
+      "resource": "funds",
+      "actions": [
+        {
+          "label": "Nova campanha",
+          "endpoint": "/finance/fund.create",
+          "special": null
+        },
+        {
+          "label": "Revisar destinação",
+          "endpoint": "/finance/approval.request",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/eventos",
+      "title": "Eventos",
+      "resource": "events",
+      "actions": [
+        {
+          "label": "Planejar evento",
+          "endpoint": "/operations/event.create",
+          "special": null
+        },
+        {
+          "label": "Atualizar programação",
+          "endpoint": "/operations/event.update",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/patrimonio",
+      "title": "Patrimônio",
+      "resource": "assets",
+      "actions": [
+        {
+          "label": "Cadastrar bem",
+          "endpoint": "/operations/asset.create",
+          "special": null
+        },
+        {
+          "label": "Movimentar bem",
+          "endpoint": "/operations/asset.move",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/manutencao",
+      "title": "Manutenção",
+      "resource": "maintenance",
+      "actions": [
+        {
+          "label": "Programar manutenção",
+          "endpoint": "/operations/maintenance.create",
+          "special": null
+        },
+        {
+          "label": "Concluir serviço",
+          "endpoint": "/operations/maintenance.complete",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/tarefas",
+      "title": "Tarefas administrativas",
+      "resource": "tasks",
+      "actions": [
+        {
+          "label": "Criar tarefa",
+          "endpoint": "/operations/task.create",
+          "special": null
+        },
+        {
+          "label": "Marcar como concluída",
+          "endpoint": "/operations/task.complete",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/documentos",
+      "title": "Documentos da casa",
+      "resource": "documents",
+      "actions": [
+        {
+          "label": "Enviar documento",
+          "endpoint": null,
+          "special": "upload"
+        },
+        {
+          "label": "Catalogar documento",
+          "endpoint": "/operations/document.create",
+          "special": null
+        },
+        {
+          "label": "Baixar arquivo",
+          "endpoint": null,
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/arquivos-documentos",
+      "title": "Arquivos institucionais",
+      "resource": "document-files",
+      "actions": [
+        {
+          "label": "Ver análise",
+          "endpoint": null,
+          "special": "analysis"
+        }
+      ]
+    },
+    {
+      "route": "/orcamento",
+      "title": "Orçamento",
+      "resource": "budgets",
+      "actions": [
+        {
+          "label": "Criar previsão",
+          "endpoint": "/operations/budget.create",
+          "special": null
+        },
+        {
+          "label": "Aprovar orçamento",
+          "endpoint": "/operations/budget.approve",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/comunicados",
+      "title": "Comunicados",
+      "resource": "announcements",
+      "actions": [
+        {
+          "label": "Publicar comunicado",
+          "endpoint": "/operations/announcement.publish",
+          "special": null
+        },
+        {
+          "label": "Estou ciente",
+          "endpoint": "/operations/announcement.ack",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/recorrencias",
+      "title": "Escalas recorrentes",
+      "resource": "series",
+      "actions": [
+        {
+          "label": "Criar série",
+          "endpoint": "/cleaning-actions/series.create",
+          "special": null
+        },
+        {
+          "label": "Interromper novas ocorrências",
+          "endpoint": "/cleaning-actions/series.stop",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/trocas",
+      "title": "Trocas de escala",
+      "resource": "swaps",
+      "actions": [
+        {
+          "label": "Responder ao pedido",
+          "endpoint": "/cleaning-actions/swap.accept",
+          "special": null
+        },
+        {
+          "label": "Revisar substituição",
+          "endpoint": "/cleaning-actions/swap.review",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/acessos",
+      "title": "Permissões e vínculos",
+      "resource": "access-changes",
+      "actions": [
+        {
+          "label": "Solicitar mudança",
+          "endpoint": "/security/request",
+          "special": null
+        },
+        {
+          "label": "Revisar alteração",
+          "endpoint": "/security/review",
+          "special": null
+        }
+      ]
+    },
+    {
+      "route": "/auditoria",
+      "title": "Auditoria",
+      "resource": "audit",
+      "actions": []
+    },
+    {
+      "route": "/pagamentos",
+      "title": "Pagamentos Pix",
+      "resource": "payment-intents",
+      "actions": [
+        {
+          "label": "Criar cobrança de teste",
+          "endpoint": "/pix/intents",
+          "special": null
+        },
+        {
+          "label": "Abrir Pix copia e cola",
+          "endpoint": null,
+          "special": "pix"
+        }
+      ]
+    },
+    {
+      "route": "/observacoes-bancarias",
+      "title": "Verificações do provedor",
+      "resource": "bank-observations",
+      "actions": []
+    }
+  ],
+  "cleaningActions": [
+    {
+      "label": "Solicitar substituição",
+      "endpoint": "/cleaning-actions/swap.request"
+    },
+    {
+      "label": "Reagendar limpeza",
+      "endpoint": "/cleaning-actions/reschedule"
+    },
+    {
+      "label": "Dispensa de participante",
+      "endpoint": "/cleaning-actions/dispense"
+    },
+    {
+      "label": "Atribuir tarefa",
+      "endpoint": "/cleaning-actions/task.assign"
+    },
+    {
+      "label": "Vincular a evento",
+      "endpoint": "/cleaning-actions/link.event"
+    },
+    {
+      "label": "Encerrar com pendências",
+      "endpoint": "/cleaning-actions/close.pending"
+    }
+  ]
+}

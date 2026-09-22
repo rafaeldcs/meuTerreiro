@@ -1,0 +1,16 @@
+{
+  "dotnet": {
+    "executed": false,
+    "reason": "dotnet não disponível"
+  },
+  "next_build": {
+    "executed": true,
+    "returncode": 127,
+    "stdout": "\n> terreiro-app@0.2.1-alpha.1 build\n> next build\n\n",
+    "stderr": "sh: 1: next: not found\n"
+  },
+  "docker": {
+    "executed": false,
+    "reason": "docker não disponível"
+  }
+}

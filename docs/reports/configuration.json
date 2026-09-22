@@ -1,0 +1,14 @@
+{
+  "xmlFilesParsed": 6,
+  "yamlFilesParsed": 3,
+  "jsonFilesParsed": 2,
+  "initRefusesOverwrite": true,
+  "upgradePreservesExistingConfiguration": true,
+  "runtime": {
+    "node": "v22.16.0",
+    "python": "3.13.5",
+    "Pillow": "12.3.0",
+    "pypdf": "5.9.0"
+  },
+  "scope": "Configuration syntax and isolated init tests; not Docker orchestration or dependency security audit."
+}
