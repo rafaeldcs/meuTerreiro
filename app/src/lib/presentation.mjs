@@ -2,6 +2,7 @@ export const RESPONSE_LABELS = Object.freeze({Pending:'Aguardando resposta', Con
 export const STATUS_LABELS = Object.freeze({Published:'Publicada', Cancelled:'Cancelada', Completed:'Concluída',ClosedWithPending:'Encerrada com pendências'});
 export const PARTICIPATION_LABELS = Object.freeze({Unverified:'Ainda não verificada', Present:'Participou', Partial:'Participou parcialmente', Absent:'Não participou'});
 export function formatDate(value) {
+  if (value == null) return "Data indisponível";
   const date = new Date(value);
   if (!Number.isFinite(date.getTime())) return 'Data indisponível';
   return new Intl.DateTimeFormat('pt-BR', {dateStyle:'medium',timeStyle:'short',timeZone:'America/Sao_Paulo'}).format(date);
