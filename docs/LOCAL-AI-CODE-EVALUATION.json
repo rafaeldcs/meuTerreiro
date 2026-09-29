@@ -1,0 +1,27 @@
+{
+  "cases": [
+    {
+      "reason": "Resposta não contém código válido nem atende ao problema; rejeitada na revisão anterior à compilação.",
+      "model": "engineering-20260917T173320Z\\best-validation.npz",
+      "passed": false,
+      "prompt": "Corrija Caddyfile: handle @api { reverse_proxy api:8080 } causa Unexpected next token after {. Retorne apenas o bloco valido.",
+      "origin": "local_model",
+      "response": "Gatevat\"}",
+      "applied": false
+    },
+    {
+      "reason": "Resposta não contém código válido nem atende ao problema; rejeitada na revisão anterior à compilação.",
+      "model": "engineering-20260917T173320Z\\best-validation.npz",
+      "passed": false,
+      "prompt": "C#: input.Endpoint e string?. Rules.Hash exige string. Proponha validacao antes do hash. Nao use ! nem silencie warnings. Retorne codigo.",
+      "origin": "local_model",
+      "response": "Tot(\"at\"}",
+      "applied": false
+    }
+  ],
+  "existingFixesAuthor": "Codex, antes do reforço da preferência de autoria",
+  "scope": "Geração pelo modelo conversacional local, distinta da política classificadora de QA",
+  "total": 2,
+  "passed": 0,
+  "date": "2026-09-29"
+}

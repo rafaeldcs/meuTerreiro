@@ -1,5 +1,11 @@
 # Estado real da versão 0.2.2-alpha.1
 
+## Rodada local de 29/09/2026
+
+Consulte [Simulação de cinco médiuns](SIMULACAO-CINCO-MEDIUNS.md). Nesta rodada foram executados build Next/.NET, 195 testes JavaScript, 138 C#, 18 Python e integração real no Compose descartável. A simulação de cinco médiuns passou 277 checks, com 51 verificações complementares. O navegador percorreu 37 rotas nos sete perfis, desktop/celular, com 505 checks e seis de interações. São evidências locais, não liberação de produção nem cobertura total da especificação. Os limites históricos abaixo permanecem aplicáveis onde não foram explicitamente superados por esta rodada.
+
+Correções de compilação e proxy foram escritas por Codex antes do reforço da preferência de autoria. Novas alterações no saravaAPP devem ser propostas pela IA local e revisadas; não atribuir testes escritos pelo revisor ao modelo.
+
 ## Como interpretar
 
 **Escrito** significa que há código de tela, rota e serviço conforme o caso. **Testado** é restrito às verificações efetivamente executadas em `VALIDACAO.md`. **Homologado** exige o fluxo integrado e aprovação dos responsáveis. Esta entrega não foi homologada nem publicada.

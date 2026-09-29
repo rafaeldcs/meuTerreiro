@@ -1,0 +1,19 @@
+# Always combine with compose.yaml and a new, explicitly named QA project.
+# No bank integration or push deliveries are enabled in the simulation.
+services:
+  api:
+    image: meuterreiro-qa-five-api
+    environment:
+      App__HouseId: centro-simulacao-cinco-mediuns
+      Pix__Enabled: 'false'
+      WebPush__Enabled: 'false'
+  app:
+    image: meuterreiro-qa-five-app
+  processor:
+    image: meuterreiro-qa-five-processor
+  gateway:
+    ports: !override
+      - 127.0.0.1:3180:3180
+    volumes: !override
+      - ./infra/Caddyfile.simulation:/etc/caddy/Caddyfile:ro
+    restart: 'no'

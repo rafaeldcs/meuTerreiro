@@ -177,7 +177,7 @@ app.MapPost("/api/push/subscribe", async (SubscriptionInput input, HttpContext c
 {
     Rules.Require(cfg.GetValue<bool>("WebPush:Enabled"), "push_disabled", "Push ainda não configurado neste ambiente.", 409);
     Rules.Require(Rules.IsMobile(c.Request.Headers.UserAgent.ToString()), "mobile_only", "Notificações são habilitadas somente no celular.", 403);
-    Rules.Require(Rules.ValidPushEndpoint(input.Endpoint ?? ""), "endpoint_invalid", "Destino de push não autorizado.");
+    Rules.Require(input.Endpoint != null && Rules.ValidPushEndpoint(input.Endpoint), "endpoint_invalid", "Destino de push não autorizado.");
     Rules.Require(input.Keys != null && ValidKey(input.Keys.P256dh, 65) && ValidKey(input.Keys.Auth, 16), "keys_invalid", "Chaves de assinatura inválidas.");
     var user = Actor(c);
     var device = new PushDevice { Id = Rules.Hash(input.Endpoint), Endpoint = input.Endpoint, P256dh = input.Keys!.P256dh, Auth = input.Keys.Auth,

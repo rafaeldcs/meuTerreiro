@@ -1,5 +1,12 @@
 # Orientações de desenvolvimento
 
+## Autoria das correções — preferência do usuário
+
+- Propostas de alteração no código do saravaAPP/MeuTerreiro devem ser geradas pela IA local. Codex investiga, ensina, revisa o diff e valida a execução; não escreve silenciosamente a solução em seu lugar.
+- Registre prompt, resposta original, autoria e resultado dos testes. Executar um roteiro escrito por Codex não significa que a IA escreveu esse roteiro.
+- Reprove propostas inválidas sem aplicá-las. Não apresente cópia de uma solução pronta ou escolha de um template como geração autônoma de código.
+- As duas correções de compilação/proxy anteriores ao reforço dessa preferência estão identificadas no relatório da simulação como autoria de Codex.
+
 ## Produto e escopo
 
 Leia README, docs/STATUS.md e docs/ADR-001-stack-shopair.md antes de modificar código. Stack: Next/React/Tailwind + .NET10/MongoDB. Não substituir por Expo ou PostgreSQL e não incorporar este módulo aos bancos ou repositórios comerciais da ShopAir sem autorização explícita.

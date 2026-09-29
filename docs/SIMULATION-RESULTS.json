@@ -1,0 +1,77 @@
+{
+  "date": "2026-09-29",
+  "followup": {
+    "success": true,
+    "checks": 51
+  },
+  "interactions": {
+    "checks": 6,
+    "success": true,
+    "screenshots": 5
+  },
+  "http": {
+    "success": true,
+    "checks": 277
+  },
+  "summary": {
+    "mediumCount": 5,
+    "monthlyCents": 10000,
+    "period": "2026-09",
+    "dues": [
+      {
+        "state": "Partial",
+        "amountCents": 10000,
+        "paidCents": 5000,
+        "balanceCents": 5000
+      },
+      {
+        "state": "Open",
+        "amountCents": 10000,
+        "paidCents": 0,
+        "balanceCents": 10000
+      },
+      {
+        "state": "Exempt",
+        "amountCents": 10000,
+        "paidCents": 0,
+        "balanceCents": 0
+      },
+      {
+        "state": "Paid",
+        "amountCents": 10000,
+        "paidCents": 10000,
+        "balanceCents": 0
+      },
+      {
+        "state": "Paid",
+        "amountCents": 10000,
+        "paidCents": 10000,
+        "balanceCents": 0
+      }
+    ],
+    "accountTotalCents": 24000
+  },
+  "browser": {
+    "routes": 37,
+    "checks": 505,
+    "success": true,
+    "screenshots": 308
+  },
+  "limitations": [
+    "Não é cobertura integral",
+    "Não homologado em produção",
+    "Roteiros escritos por Codex; executor local; modelo conversacional reprovado para autoria"
+  ],
+  "codeGeneration": {
+    "applied": false,
+    "total": 2,
+    "passed": 0
+  },
+  "unitTests": {
+    "localAuthor": 220,
+    "javascript": 195,
+    "csharp": 138,
+    "processor": 18
+  },
+  "existingHttpSmoke": 145
+}
