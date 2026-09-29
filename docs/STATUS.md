@@ -2,6 +2,8 @@
 
 ## Rodada local de 29/09/2026
 
+Na rodada posterior de ensino, o LocalAuthor gerou os dois blocos Caddy e a condição C# do projeto sem que esses alvos entrassem no treino. As propostas foram aplicadas mecanicamente a uma cópia isolada do código original: Caddy validado, API publicada e 138 testes C# aprovados. Qualificação restrita a essas duas famílias; modelo geral permanece não qualificado. As correções anteriormente versionadas continuam com a autoria histórica de Codex. Veja `LOCAL-AI-REPAIR-QUALIFICATION.md`.
+
 Consulte [Simulação de cinco médiuns](SIMULACAO-CINCO-MEDIUNS.md). Nesta rodada foram executados build Next/.NET, 195 testes JavaScript, 138 C#, 18 Python e integração real no Compose descartável. A simulação de cinco médiuns passou 277 checks, com 51 verificações complementares. O navegador percorreu 37 rotas nos sete perfis, desktop/celular, com 505 checks e seis de interações. São evidências locais, não liberação de produção nem cobertura total da especificação. Os limites históricos abaixo permanecem aplicáveis onde não foram explicitamente superados por esta rodada.
 
 Correções de compilação e proxy foram escritas por Codex antes do reforço da preferência de autoria. Novas alterações no saravaAPP devem ser propostas pela IA local e revisadas; não atribuir testes escritos pelo revisor ao modelo.
